@@ -16,16 +16,19 @@
 - Frontend: HTML, CSS, JavaScript (Vanilla)
 
 ## 프로젝트 구조
+
+``` plaintext
 /todo-rest-api
 │
 ├── public
-│ ├── index.html # 프론트엔드 HTML
-│ ├── styles.css # CSS 스타일
-│ └── scripts.js # 프론트엔드 JavaScript
+│   ├── index.html   # 프론트엔드 HTML
+│   ├── styles.css   # CSS 스타일
+│   └── scripts.js   # 프론트엔드 JavaScript
 │
-├── server.js # 서버 설정 및 API 엔드포인트
-├── .gitignore # Git 무시 파일
-└── README.md # 이 문서
+├── server.js        # 서버 설정 및 API 엔드포인트
+├── .gitignore       # Git 무시 파일
+└── README.md        # 이 문서
+```
 
 ## 시작하기
 
@@ -56,20 +59,16 @@ brew services start mongodb/brew/mongodb-community
 ### 프로젝트 설정
 
 1. 프로젝트 디렉토리 생성 및 초기화
-
-bash
-'''
+``` bash
 mkdir todo-rest-api
 cd todo-rest-api
 npm init -y
-'''
+```
 
 2. 필요한 패키지 설치
-
-bash
-'''
+``` bash
 npm install express mongoose body-parser
-'''
+```
 
 3. 프로젝트 파일 생성
 - `server.js` - 서버 설정 및 API 엔드포인트
@@ -78,11 +77,9 @@ npm install express mongoose body-parser
 - `public/scripts.js` - 프론트엔드 JavaScript
 
 4. 서버 실행
-
-bash
-'''
+``` bash
 node server.js
-'''
+```
 
 서버가 실행되면 `http://localhost:3000`에서 애플리케이션에 접속할 수 있습니다.
 
@@ -98,9 +95,7 @@ node server.js
 ### 요청/응답 예시
 
 #### Todo 생성
-
-json
-'''
+``` json
 // POST /todos
 // Request
 {
@@ -112,9 +107,51 @@ json
 "title": "새로운 할 일",
 "completed": false
 }
-'''
+```
 
 #### Todo 목록 조회
+``` json
+// POST /todos
+// Request
+{
+"title": "새로운 할 일"
+}
+// Response
+{
+"id": "60f1234567890",
+"title": "새로운 할 일",
+"completed": false
+}
+```
+
+#### Todo 수정
+``` json
+// PUT /todos/:id
+// Request
+{
+"id": "60f1234567890",
+"title": "수정된 할 일"
+}
+// Response
+{
+"id": "60f1234567890",
+"title": "수정된 할 일",
+"completed": false
+}
+```
+
+#### Todo 삭제
+``` json
+// DELETE /todos/:id
+// Request
+{
+"id": "60f1234567890"
+}
+// Response
+{
+"message": "Todo 항목이 성공적으로 삭제되었습니다."
+}
+```
 
 ## 문제 해결
 
