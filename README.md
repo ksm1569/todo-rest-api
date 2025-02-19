@@ -42,11 +42,15 @@
 #### macOS
 
 Homebrew를 사용한 MongoDB 설치
+``` bash
 brew tap mongodb/brew
 brew install mongodb-community
-MongoDB 서비스 시작
-brew services start mongodb/brew/mongodb-community
+```
 
+MongoDB 서비스 시작
+``` bash
+brew services start mongodb/brew/mongodb-community
+```
 
 #### Windows
 
@@ -162,3 +166,9 @@ node server.js
 ### 서버 실행 오류
 - 포트 3000이 이미 사용 중인 경우, `server.js`에서 다른 포트 번호로 변경
 - 필요한 모든 패키지가 설치되어 있는지 확인
+
+## 샘플화면
+![image](https://github.com/user-attachments/assets/aa39e62f-a723-4888-bd16-9595e815efa2)
+
+
+
